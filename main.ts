@@ -15,7 +15,8 @@ basic.showIcon(IconNames.Happy)
 // when the "A" button is clicked
 input.onButtonPressed(Button.A, function () {
     basic.clearScreen()
-    basic.showIcon(IconNames.Yes)
+
+    // repeats over and over again
     while (true) {
 
 // get the distance using the sonar
@@ -25,20 +26,18 @@ input.onButtonPressed(Button.A, function () {
             PingUnit.Centimeters,
         )
 
-// turns the sonar 180 degress. but since this is in a while loop, this runs forever. until the if block below is true
-        robotbit.StpCarMove(1, 48)
-
 // if distance is below 10 cm
         if (distanceToObject > 0 && distanceToObject <= 10) {
             basic.clearScreen()
             basic.showString(distanceToObject.toString() + ' cm')
-            robotbit.StpCarMove(0, 48)
+            robotbit.StpCarMove(0, 48) // stop the car
             basic.pause(1000)
-            robotbit.StpCarMove(-10, 48)
+            robotbit.StpCarMove(-10, 48) // reverse 10 cm
             basic.pause(1000)
-            robotbit.StpCarTurn(90, 48, 125)
-
-            robotbit.StepperTurn(robotbit.Steppers.M1, robotbit.Turns.T1B4)
+            robotbit.StepperTurn(robotbit.Steppers.M1, robotbit.Turns.T1B4) // turn 90 degrees
+        } else {
+            basic.showIcon(IconNames.Yes)
+            robotbit.StpCarMove(2, 48)
         }
     }
 })
