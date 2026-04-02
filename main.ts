@@ -6,7 +6,7 @@
 */
 
 // variable
-let distanceToObject: number = 0
+let distance: number = 0
 
 // show happy face
 basic.clearScreen()
@@ -20,16 +20,16 @@ input.onButtonPressed(Button.A, function () {
     while (true) {
 
 // get the distance using the sonar
-        distanceToObject = sonar.ping(
+        distance = sonar.ping(
             DigitalPin.P1, // trigger
             DigitalPin.P2, // echo
             PingUnit.Centimeters,
         )
 
 // if distance is below 10 cm
-        if (distanceToObject > 0 && distanceToObject <= 10) {
+        if (distance > 0 && distance <= 10) {
             basic.clearScreen()
-            basic.showString(distanceToObject.toString() + ' cm')
+            basic.showString(distance.toString() + ' cm')
             robotbit.StpCarMove(0, 48) // stop the car
             basic.pause(1000)
             robotbit.StpCarMove(-10, 48) // reverse 10 cm
