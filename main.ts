@@ -12,13 +12,15 @@ let distance: number = 0
 basic.clearScreen()
 basic.showIcon(IconNames.Happy)
 
+robotbit.StpCarMove(0, 48)
+
 // when the "A" button is clicked
 input.onButtonPressed(Button.A, function () {
     basic.clearScreen()
 
     // repeats over and over again
     while (true) {
-
+        robotbit.StpCarMove(0, 48)
 // get the distance using the sonar
         distance = sonar.ping(
             DigitalPin.P1, // trigger
@@ -37,7 +39,7 @@ input.onButtonPressed(Button.A, function () {
             robotbit.StepperTurn(robotbit.Steppers.M1, robotbit.Turns.T1B4) // turn 90 degrees
         } else {
             basic.showIcon(IconNames.Yes)
-            robotbit.StpCarMove(2, 48)
+            robotbit.StpCarMove(1, 48)
         }
     }
 })
