@@ -12,6 +12,7 @@ let distance: number = 0
 basic.clearScreen()
 basic.showIcon(IconNames.Happy)
 
+// make sure the car is stopped before initilization
 robotbit.StpCarMove(0, 48)
 
 // when the "A" button is clicked
@@ -24,7 +25,7 @@ input.onButtonPressed(Button.A, function () {
 // get the distance using the sonar
         distance = sonar.ping(
             DigitalPin.P1, // trigger
-            DigitalPin.P2, // echo
+            DigitalPin.P2, // echok
             PingUnit.Centimeters,
         )
 
