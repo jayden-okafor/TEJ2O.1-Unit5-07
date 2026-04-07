@@ -22,14 +22,14 @@ input.onButtonPressed(Button.A, function () {
     // repeats over and over again
     while (true) {
         robotbit.StpCarMove(0, 48)
-// get the distance using the sonar
+        // get the distance using the sonar
         distance = sonar.ping(
             DigitalPin.P1, // trigger
             DigitalPin.P2, // echok
             PingUnit.Centimeters,
         )
 
-// if distance is below 10 cm
+        // if distance is below 10 cm
         if (distance > 0 && distance <= 10) {
             basic.clearScreen()
             basic.showString(distance.toString() + ' cm')
