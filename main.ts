@@ -25,7 +25,7 @@ input.onButtonPressed(Button.A, function () {
         // get the distance using the sonar
         distance = sonar.ping(
             DigitalPin.P1, // trigger
-            DigitalPin.P2, // echok
+            DigitalPin.P2, // echo
             PingUnit.Centimeters,
         )
 
