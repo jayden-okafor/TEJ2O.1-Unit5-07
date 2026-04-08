@@ -9,7 +9,7 @@
 basic.clearScreen()
 basic.showIcon(IconNames.Happy)
 
-// make sure the car is stopped before initilization
+// make sure the car is stopped before initialization
 robotbit.StpCarMove(0, 48)
 
 // when the "A" button is clicked
