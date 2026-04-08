@@ -31,6 +31,7 @@ input.onButtonPressed(Button.A, function () {
         if (distance > 0 && distance <= 10) {
             basic.clearScreen()
             basic.showString(distance.toString() + ' cm')
+            basic.showIcon(IconNames.Yes)
             robotbit.StpCarMove(0, 48) // stop the car
             basic.pause(1000)
             robotbit.StpCarMove(-10, 48) // reverse 10 cm
